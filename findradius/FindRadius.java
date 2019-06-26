@@ -1,7 +1,6 @@
 package findradius;
 
 import java.util.Arrays;
-import java.util.LinkedList;
 
 public class FindRadius {
 
@@ -13,7 +12,7 @@ public class FindRadius {
     }
 
     public int findRadius(int[] houses, int[] heaters) {
-        // 对于每个房子
+        // 瀵逛簬姣忎釜鎴垮瓙
         Arrays.sort(houses);
         Arrays.sort(heaters);
         int headerLength=heaters.length;
@@ -53,13 +52,13 @@ public class FindRadius {
     }
 
     public int findRadiuslow(int[] houses, int[] heaters) {
-        // 求每个房屋和最近的热水器之间的最大距离
+        // 姹傛瘡涓埧灞嬪拰鏈�杩戠殑鐑按鍣ㄤ箣闂寸殑鏈�澶ц窛绂�
         int max = 0;
         int distances[] = new int[houses.length];
         for (int i = 0; i < distances.length; i++) {
             distances[i] = -1;
         }
-        // 每个房子到最近热水器之间的距离
+        // 姣忎釜鎴垮瓙鍒版渶杩戠儹姘村櫒涔嬮棿鐨勮窛绂�
         for (int i = 0; i < houses.length; i++) {
             for (int j = 0; j < heaters.length; j++) {
                 int distance = 0;
@@ -77,7 +76,7 @@ public class FindRadius {
                 }
             }
         }
-        // 求出距离的最大值
+        // 姹傚嚭璺濈鐨勬渶澶у��
         for (int i = 0; i < distances.length; i++) {
             if (max < distances[i]) {
                 max = distances[i];
