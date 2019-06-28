@@ -5,64 +5,63 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import jdk.nashorn.internal.runtime.linker.LinkerCallSite;
-import sun.rmi.transport.tcp.TCPTransport;
-
 public class CBTInserter {
 
-	class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
+    class TreeNode {
 
-		TreeNode(int x) {
-			val = x;
-		}
-	}
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-	List<TreeNode> list = new ArrayList<>();
-	private TreeNode root = null;
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 
-	public CBTInserter(TreeNode root) {
-		this.root = root;
-		if (root == null) {
-			return;
-		}
-		TreeNode node = root;
+    List<TreeNode> list = new ArrayList<>();
+    private TreeNode root = null;
 
-		Queue<TreeNode> tempQueue = new LinkedList<>();
-		tempQueue.add(node);
-		while (!tempQueue.isEmpty()) {
-			TreeNode myNode = tempQueue.poll();
-			if (myNode != null) {
-				list.add(myNode);
-			}
-			if (myNode.left != null) {
-				tempQueue.add(myNode.left);
-			}
-			if (myNode.right != null) {
-				tempQueue.add(myNode.right);
-			}
-		}
-	}
+    public CBTInserter(TreeNode root) {
+        this.root = root;
+        if (root == null) {
+            return;
+        }
+        TreeNode node = root;
 
-	public int insert(int v) {
-		TreeNode treeNode = new TreeNode(v);
-		list.add(treeNode);
-		int size = list.size();
-		if (size == 1) {
-			this.root = treeNode;
-			return this.root.val;
-		}
-		if (size % 2 == 0) {
-			list.get(size / 2).left = treeNode;
-		} else {
-			list.get(size / 2).right = treeNode;
-		}
-		return list.get(0).val;
-	}
+        Queue<TreeNode> tempQueue = new LinkedList<>();
+        tempQueue.add(node);
+        while (!tempQueue.isEmpty()) {
+            TreeNode myNode = tempQueue.poll();
+            if (myNode != null) {
+                list.add(myNode);
+            }
+            if (myNode.left != null) {
+                tempQueue.add(myNode.left);
+            }
+            if (myNode.right != null) {
+                tempQueue.add(myNode.right);
+            }
+        }
+    }
 
-	public TreeNode get_root() {
-		return this.root;
-	}
+    public int insert(int v) {
+        TreeNode treeNode = new TreeNode(v);
+        list.add(treeNode);
+        int size = list.size();
+        if (size == 1) {
+            this.root = treeNode;
+            return this.root.val;
+        }
+        if (size % 2 == 0) {
+            list.get(size / 2).left = treeNode;
+        }
+        else {
+            list.get(size / 2).right = treeNode;
+        }
+        return list.get(0).val;
+    }
+
+    public TreeNode get_root() {
+        return this.root;
+    }
 }

@@ -36,19 +36,6 @@ public class CountPrimes {
         return count;
     }
 
-    public int countPrimes1(int n) {
-        int count = 0;
-        List<Integer> primes = new ArrayList<>();
-        primes.add(2);
-        for (int i = 2; i < n; i++) {
-            if (isNotPrimes(primes, i)) {
-                continue;
-            }
-            i++;
-        }
-        return n;
-    }
-
     private boolean isNotPrimes(List<Integer> primes, int n) {
         for (int i = 0; i < primes.size(); i++) {
             if (n % primes.get(i) == 0) {
