@@ -46,7 +46,7 @@ public class IsPalindrome {
             stringBuffer.append(node.val + ",");
             node = node.next;
         }
-        
+
         node = head;
         ListNode newListHead = null;
         while (node != null) {
@@ -55,14 +55,14 @@ public class IsPalindrome {
             newListHead = node;
             node = tmp;
         }
-        
+
         StringBuffer stringBuffer1 = new StringBuffer();
         node = newListHead;
         while (node != null) {
             stringBuffer1.append(node.val + ",");
             node = node.next;
         }
-        if(stringBuffer.toString().equals(stringBuffer1.toString())){
+        if (stringBuffer.toString().equals(stringBuffer1.toString())) {
             return true;
         }
         return false;
