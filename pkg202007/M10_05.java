@@ -1,12 +1,9 @@
 package pkg202007;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import com.sun.corba.se.impl.orbutil.graph.Node;
 
 public class M10_05 {
 	private static class Node {
@@ -26,12 +23,16 @@ public class M10_05 {
 				nodes.add(new Node(i, words[i]));
 			}
 		}
-		return Collections.binarySearch(nodes, new Node(0, s), new Comparator<Node>() {
+		int index = Collections.binarySearch(nodes, new Node(0, s), new Comparator<Node>() {
 
 			@Override
 			public int compare(Node o1, Node o2) {
 				return o1.str.compareTo(o2.str);
 			}
 		});
+		if (index < 0) {
+			return -1;
+		}
+		return nodes.get(index).index;
 	}
 }
