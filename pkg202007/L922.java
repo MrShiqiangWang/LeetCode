@@ -4,12 +4,12 @@ import utils.ArrayHelper;
 
 public class L922 {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println(new L922().sortArrayByParityII(ArrayHelper.stringToArray("[3,4]")));
     }
 
-    public int[] sortArrayByParityII(int[] A) {
-        int[] result = new int[A.length];
+    public int[] sortArrayByParityII(final int[] A) {
+        final int[] result = new int[A.length];
         int ou = 0;
         int ji = 1;
         for (int i = 0; i < A.length; i++) {

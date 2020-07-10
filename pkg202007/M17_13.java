@@ -2,39 +2,6 @@ package pkg202007;
 
 public class M17_13 {
 
-    /**
-     * ["looked","just","like","her","brother"]
-     * "jesslookedjustliketimherbrother"
-     * 
-     * @param args
-     */
-
-    public static void main(String[] args) {
-        // []
-        // "rkktkruzsjkrzqqzkvdzqrzpkrukdqrqjzkrqrzzkkrr"
-        String[] dictionary2 = {
-                "vprkj",
-                "sqvuzjz",
-                "ptkrqrkussszzprkqrjrtzzvrkrrrskkrrursqdqpp",
-                "spqzqtrqs",
-                "rkktkruzsjkrzqq",
-                "rk",
-                "k",
-                "zkvdzqrzpkrukdqrqjzkrqrzzkkrr",
-                "pzpstvqzrzprqkkkd",
-                "jvutvjtktqvvdkzujkq",
-                "r",
-                "pspkr",
-                "tdkkktdsrkzpzpuzvszzzzdjj",
-                "zk",
-                "pqkjkzpvdpktzskdkvzjkkj",
-                "sr",
-                "zqjkzksvkvvrsjrjkkjkztrpuzrqrqvvpkutqkrrqpzu" };
-        System.out.println(new M17_13().respace(
-                dictionary2,
-                "rkktkruzsjkrzqqzkvdzqrzpkrukdqrqjzkrqrzzkkrr"));
-    }
-
     private static class Tribe {
 
         public static Tribe buildTribe(final String[] dictionary) {
@@ -67,6 +34,39 @@ public class M17_13 {
 
         // 字典表的末尾
         boolean isEnd = false;
+    }
+
+    /**
+     * ["looked","just","like","her","brother"]
+     * "jesslookedjustliketimherbrother"
+     *
+     * @param args
+     */
+
+    public static void main(final String[] args) {
+        // []
+        // "rkktkruzsjkrzqqzkvdzqrzpkrukdqrqjzkrqrzzkkrr"
+        final String[] dictionary2 = {
+                "vprkj",
+                "sqvuzjz",
+                "ptkrqrkussszzprkqrjrtzzvrkrrrskkrrursqdqpp",
+                "spqzqtrqs",
+                "rkktkruzsjkrzqq",
+                "rk",
+                "k",
+                "zkvdzqrzpkrukdqrqjzkrqrzzkkrr",
+                "pzpstvqzrzprqkkkd",
+                "jvutvjtktqvvdkzujkq",
+                "r",
+                "pspkr",
+                "tdkkktdsrkzpzpuzvszzzzdjj",
+                "zk",
+                "pqkjkzpvdpktzskdkvzjkkj",
+                "sr",
+                "zqjkzksvkvvrsjrjkkjkztrpuzrqrqvvpkutqkrrqpzu" };
+        System.out.println(new M17_13().respace(
+                dictionary2,
+                "rkktkruzsjkrzqqzkvdzqrzpkrukdqrqjzkrqrzzkkrr"));
     }
 
     public int respace(final String[] dictionary, final String sentence) {

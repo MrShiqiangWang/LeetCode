@@ -5,29 +5,27 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import javafx.util.Pair;
-
 public class L1030 {
 
     private static class Cell {
 
-        private int i;
-        private int j;
-        private int distance;
+        private final int i;
+        private final int j;
+        private final int distance;
 
-        public Cell(int i, int j, int distance) {
+        public Cell(final int i, final int j, final int distance) {
             this.i = i;
             this.j = j;
             this.distance = distance;
         }
     }
 
-    public int[][] allCellsDistOrder(int R, int C, int r0, int c0) {
+    public int[][] allCellsDistOrder(final int R, final int C, final int r0, final int c0) {
 
-        List<Cell> cells = new ArrayList<>();
+        final List<Cell> cells = new ArrayList<>();
         for (int i = 0; i < R; i++) {
             for (int j = 0; j < C; j++) {
-                int distance = Math.abs(i - r0) + Math.abs(j - c0);
+                final int distance = Math.abs(i - r0) + Math.abs(j - c0);
                 cells.add(new Cell(i, j, distance));
             }
         }
@@ -35,12 +33,12 @@ public class L1030 {
         Collections.sort(cells, new Comparator<Cell>() {
 
             @Override
-            public int compare(Cell o1, Cell o2) {
+            public int compare(final Cell o1, final Cell o2) {
                 return o1.distance - o2.distance;
             }
         });
 
-        int[][] re = new int[R * C][2];
+        final int[][] re = new int[R * C][2];
 
         for (int i = 0; i < cells.size(); i++) {
             re[i][0] = cells.get(i).i;
