@@ -9,12 +9,12 @@ import java.util.Map.Entry;
 
 public class L1122 {
 
-    public int[] relativeSortArray(int[] arr1, int[] arr2) {
-        Map<Integer, Integer> map = new LinkedHashMap<>();
+    public int[] relativeSortArray(final int[] arr1, final int[] arr2) {
+        final Map<Integer, Integer> map = new LinkedHashMap<>();
         for (int i = 0; i < arr2.length; i++) {
             map.put(arr2[i], 0);
         }
-        List<Integer> data = new ArrayList<Integer>();
+        final List<Integer> data = new ArrayList<Integer>();
         for (int i = 0; i < arr1.length; i++) {
             if (!map.containsKey(arr1[i])) {
                 data.add(arr1[i]);
@@ -23,9 +23,9 @@ public class L1122 {
                 map.put(arr1[i], map.get(arr1[i]) + 1);
             }
         }
-        int[] result = new int[arr1.length];
+        final int[] result = new int[arr1.length];
         int index = 0;
-        for (Entry<Integer, Integer> entry : map.entrySet()) {
+        for (final Entry<Integer, Integer> entry : map.entrySet()) {
             for (int i = 0; i < entry.getValue(); i++) {
                 result[index] = entry.getKey();
                 index++;

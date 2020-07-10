@@ -4,7 +4,7 @@ import utils.TreeNode;
 
 public class L100 {
 
-    public boolean isSameTree(TreeNode p, TreeNode q) {
+    public boolean isSameTree(final TreeNode p, final TreeNode q) {
         if (p == null && q == null) {
             return true;
         }
@@ -19,7 +19,7 @@ public class L100 {
                 return false;
             }
             else {
-                return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+                return this.isSameTree(p.left, q.left) && this.isSameTree(p.right, q.right);
             }
         }
     }

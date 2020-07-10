@@ -4,7 +4,10 @@ import utils.TreeNode;
 
 public class L104 {
 
-    public int maxDepth(TreeNode root) {
-        return 0;
+    public int maxDepth(final TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return Math.max(this.maxDepth(root.left), this.maxDepth(root.right)) + 1;
     }
 }

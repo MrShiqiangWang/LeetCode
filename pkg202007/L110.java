@@ -5,27 +5,27 @@ import utils.TreeNode;
 
 public class L110 {
 
-    public static void main(String[] args) {
-        TreeNode node = TreeHelper.stringToTree("[3,9,20,null,null,15,7]");
+    public static void main(final String[] args) {
+        final TreeNode node = TreeHelper.stringToTree("[3,9,20,null,null,15,7]");
         System.out.println(new L110().isBalanced(node));
     }
 
-    public boolean isBalanced(TreeNode root) {
+    public boolean isBalanced(final TreeNode root) {
         if (root == null) {
             return false;
         }
-        int leftHeight = height(root.left);
-        int rightHeight = height(root.right);
+        final int leftHeight = this.height(root.left);
+        final int rightHeight = this.height(root.right);
         if (Math.abs(leftHeight - rightHeight) <= 1) {
             if (root.left == null && root.right == null) {
                 return true;
             }
-            return isBalanced(root.left) && isBalanced(root.right);
+            return this.isBalanced(root.left) && this.isBalanced(root.right);
         }
         return false;
     }
 
-    private int height(TreeNode root) {
+    private int height(final TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -33,13 +33,13 @@ public class L110 {
             return 1;
         }
         else if (root.left == null) {
-            return 1 + height(root.right);
+            return 1 + this.height(root.right);
         }
         else if (root.right == null) {
-            return 1 + height(root.left);
+            return 1 + this.height(root.left);
         }
         else {
-            return 1 + Math.max(height(root.left), height(root.right));
+            return 1 + Math.max(this.height(root.left), this.height(root.right));
         }
     }
 }
