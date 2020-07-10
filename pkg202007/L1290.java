@@ -2,6 +2,8 @@ package pkg202007;
 
 import java.math.BigInteger;
 
+import utils.ListNode;
+
 public class L1290 {
 
     public static void main(final String[] args) {
@@ -27,15 +29,5 @@ public class L1290 {
         while (node != null);
         final BigInteger bigInteger = new BigInteger(builder.toString(), 2);
         return Integer.parseInt(bigInteger.toString(10));
-    }
-}
-
-class ListNode {
-
-    int val;
-    ListNode next;
-
-    ListNode(final int x) {
-        this.val = x;
     }
 }

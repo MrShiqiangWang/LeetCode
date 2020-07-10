@@ -1,5 +1,7 @@
 package pkg202007;
 
+import utils.ListNode;
+
 public class L82 {
 
     public ListNode deleteDuplicates(final ListNode head) {

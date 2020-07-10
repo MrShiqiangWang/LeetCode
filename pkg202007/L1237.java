@@ -3,8 +3,6 @@ package pkg202007;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.org.apache.regexp.internal.REUtil;
-
 public class L1237 {
 
     class CustomFunction {
