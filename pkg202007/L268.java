@@ -1,10 +1,14 @@
 package pkg202007;
 
-public class O53_2 {
+import java.util.Arrays;
+
+public class L268 {
 	public int missingNumber(int[] nums) {
+		Arrays.sort(nums);
+
 		int left = 0;
 		int right = nums.length - 1;
-		int mid = -1;
+		int mid = 0;
 		while (left <= right) {
 			mid = (left + right) / 2;
 			if (nums[mid] == mid) {
@@ -13,6 +17,6 @@ public class O53_2 {
 				right = mid - 1;
 			}
 		}
-		return left + 1;
+		return mid + 1;
 	}
 }
