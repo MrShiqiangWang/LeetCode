@@ -4,12 +4,20 @@ import java.util.Arrays;
 
 public class M17_10 {
 
-    public int majorityElement(final int[] nums) {
-        Arrays.sort(nums);
-        final int mid = nums.length / 2 + 1;
-        if (nums[mid] != nums[0] && nums[mid] != nums[nums.length - 1]) {
-            return -1;
-        }
-        return nums[mid];
-    }
+	public int majorityElement(int[] nums) {
+		int temp = nums[0];
+		int counter = 1;
+		for (int i = 1; i < nums.length; i++) {
+			if (nums[i] == temp) {
+				counter++;
+			} else {
+				counter--;
+			}
+			if (counter < 0) {
+				counter = 1;
+				temp = nums[i];
+			}
+		}
+		return temp;
+	}
 }
