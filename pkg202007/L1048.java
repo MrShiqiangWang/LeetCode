@@ -14,32 +14,6 @@ public class L1048 {
         System.out.println(new L1048().longestStrChain(words));
     }
 
-    private boolean isHouji(final String preStr, final String nextStr) {
-        int i = 0;
-        int j = 0;
-        final char[] pre = preStr.toCharArray();
-        final char[] next = nextStr.toCharArray();
-        if (next.length - pre.length != 1) {
-            return false;
-        }
-        for (; i < pre.length && j < next.length;) {
-            if (pre[i] == next[j]) {
-                i++;
-                j++;
-            }
-            else {
-                j++;
-            }
-        }
-        if (j == i + 1) {
-            return true;
-        }
-        if (i == j) {
-            return true;
-        }
-        return false;
-    }
-
     public int longestStrChain(final String[] words) {
 
         Arrays.sort(words, new Comparator<String>() {
@@ -78,5 +52,31 @@ public class L1048 {
         }
         return longest;
 
+    }
+
+    private boolean isHouji(final String preStr, final String nextStr) {
+        int i = 0;
+        int j = 0;
+        final char[] pre = preStr.toCharArray();
+        final char[] next = nextStr.toCharArray();
+        if (next.length - pre.length != 1) {
+            return false;
+        }
+        for (; i < pre.length && j < next.length;) {
+            if (pre[i] == next[j]) {
+                i++;
+                j++;
+            }
+            else {
+                j++;
+            }
+        }
+        if (j == i + 1) {
+            return true;
+        }
+        if (i == j) {
+            return true;
+        }
+        return false;
     }
 }

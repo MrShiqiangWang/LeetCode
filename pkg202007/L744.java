@@ -2,12 +2,12 @@ package pkg202007;
 
 public class L744 {
 
-    public char nextGreatestLetter(char[] letters, char target) {
+    public char nextGreatestLetter(final char[] letters, final char target) {
 
         int left = 0;
         int right = letters.length - 1;
         while (left <= right) {
-            int mid = (left + right) / 2;
+            final int mid = (left + right) / 2;
             if (letters[mid] <= target) {
                 left = mid + 1;
             }

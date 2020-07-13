@@ -2,12 +2,12 @@ package pkg202007;
 
 public class L704 {
 
-    public int search(int[] nums, int target) {
+    public int search(final int[] nums, final int target) {
 
         int left = 0;
         int right = nums.length - 1;
         while (left <= right) {
-            int mid = (left + right) / 2;
+            final int mid = (left + right) / 2;
             if (nums[mid] == target) {
                 return mid;
             }
