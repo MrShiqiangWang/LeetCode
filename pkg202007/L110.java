@@ -10,6 +10,21 @@ public class L110 {
         System.out.println(new L110().isBalanced(node));
     }
 
+    public boolean isBalanced(final TreeNode root) {
+        if (root == null) {
+            return false;
+        }
+        final int leftHeight = this.height(root.left);
+        final int rightHeight = this.height(root.right);
+        if (Math.abs(leftHeight - rightHeight) <= 1) {
+            if (root.left == null && root.right == null) {
+                return true;
+            }
+            return this.isBalanced(root.left) && this.isBalanced(root.right);
+        }
+        return false;
+    }
+
     private int height(final TreeNode root) {
         if (root == null) {
             return 0;
@@ -26,20 +41,5 @@ public class L110 {
         else {
             return 1 + Math.max(this.height(root.left), this.height(root.right));
         }
-    }
-
-    public boolean isBalanced(final TreeNode root) {
-        if (root == null) {
-            return false;
-        }
-        final int leftHeight = this.height(root.left);
-        final int rightHeight = this.height(root.right);
-        if (Math.abs(leftHeight - rightHeight) <= 1) {
-            if (root.left == null && root.right == null) {
-                return true;
-            }
-            return this.isBalanced(root.left) && this.isBalanced(root.right);
-        }
-        return false;
     }
 }

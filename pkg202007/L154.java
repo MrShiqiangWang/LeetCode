@@ -4,11 +4,11 @@ import utils.ArrayHelper;
 
 public class L154 {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println(new L154().findMin(ArrayHelper.stringToArray("[3,3,1,3]")));
     }
 
-    public int findMin(int[] nums) {
+    public int findMin(final int[] nums) {
         int left = 0;
         int right = nums.length - 1;
         int mid = 0;

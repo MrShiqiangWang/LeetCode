@@ -1,30 +1,31 @@
 package pkg202007;
 
 public class L762 {
-	public int countPrimeSetBits(int L, int R) {
-		int counter = 0;
-		for (int i = L; i <= R; i++) {
-			char[] cs = Integer.toUnsignedString(i, 2).toCharArray();
-			int size = 0;
-			for (int j = 0; j < cs.length; j++) {
-				if (cs[j] == '1') {
-					size++;
-				}
-			}
-			if (isPrime(size)) {
-				counter++;
-			}
-		}
-		return counter;
-	}
 
-	private boolean isPrime(int num) {
-		int k = (int) Math.sqrt(num);// kÎªnumµÄÕýÆ½·½¸ù£¬È¡ÕûÊý
-		for (int i = 2; i <= k; i++) {
-			if (num % i == 0) {
-				return false;
-			}
-		}
-		return true;
-	}
+    public int countPrimeSetBits(final int L, final int R) {
+        int counter = 0;
+        for (int i = L; i <= R; i++) {
+            final char[] cs = Integer.toUnsignedString(i, 2).toCharArray();
+            int size = 0;
+            for (int j = 0; j < cs.length; j++) {
+                if (cs[j] == '1') {
+                    size++;
+                }
+            }
+            if (this.isPrime(size)) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    private boolean isPrime(final int num) {
+        final int k = (int) Math.sqrt(num);// kÎªnumï¿½ï¿½ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+        for (int i = 2; i <= k; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

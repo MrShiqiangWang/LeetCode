@@ -2,19 +2,15 @@ package pkg202007;
 
 public class L374 {
 
-    int guess(int num) {
-        return num;
-    }
-
-    public int guessNumber(int n) {
+    public int guessNumber(final int n) {
         int left = 1;
         int right = n;
         while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (guess(mid) == 0) {
+            final int mid = left + (right - left) / 2;
+            if (this.guess(mid) == 0) {
                 return mid;
             }
-            else if (guess(mid) > 0) {
+            else if (this.guess(mid) > 0) {
                 left = mid + 1;
             }
             else {
@@ -22,5 +18,9 @@ public class L374 {
             }
         }
         return -1;
+    }
+
+    int guess(final int num) {
+        return num;
     }
 }
