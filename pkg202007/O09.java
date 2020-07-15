@@ -25,13 +25,16 @@ public class O09 {
 		}
 
 		public int deleteHead() {
-			if(deleteStack.isEmpty()) {
-				while(!insertStack.isEmpty()) {
+			if (deleteStack.isEmpty()) {
+				while (!insertStack.isEmpty()) {
 					Integer va = insertStack.pop();
 					deleteStack.push(va);
 				}
 			}
-			return 0;
+			if(deleteStack.isEmpty()) {
+				return -1;
+			}
+			return deleteStack.pop();
 		}
 	}
 }
