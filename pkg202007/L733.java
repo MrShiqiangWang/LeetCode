@@ -4,19 +4,19 @@ import utils.MatrixHelper;
 
 public class L733 {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println(new L733().floodFill(MatrixHelper.stringToMatrix("[[0,0,0],[0,1,1]]"), 1, 1, 1));
     }
 
-    public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
-        int oldColor = image[sr][sc];
-        boolean[][] biaoji = new boolean[image.length][image[0].length];
+    public int[][] floodFill(final int[][] image, final int sr, final int sc, final int newColor) {
+        final int oldColor = image[sr][sc];
+        final boolean[][] biaoji = new boolean[image.length][image[0].length];
         this.floodFill(image, sr, sc, newColor, oldColor, biaoji);
         return image;
 
     }
 
-    private void floodFill(int[][] image, int sr, int sc, int newColor, int oldColor, boolean[][] biaoji) {
+    private void floodFill(final int[][] image, final int sr, final int sc, final int newColor, final int oldColor, final boolean[][] biaoji) {
         if (sr < 0 || sr >= image.length) {
             return;
         }

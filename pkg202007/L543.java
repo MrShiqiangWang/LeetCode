@@ -7,26 +7,26 @@ import utils.TreeNode;
 public class L543 {
 
     public int diameterOfBinaryTree(TreeNode root) {
-        Stack<TreeNode> stack = new Stack<>();
+        final Stack<TreeNode> stack = new Stack<>();
         int diameter = 0;
         while (root != null || !stack.isEmpty()) {
             if (root != null) {
                 stack.push(root);
-                diameter = Math.max(height(root.left) + height(root.right), diameter);
+                diameter = Math.max(this.height(root.left) + this.height(root.right), diameter);
                 root = root.left;
             }
             else {
-                TreeNode node = stack.pop();
+                final TreeNode node = stack.pop();
                 root = node.right;
             }
         }
         return diameter;
     }
 
-    private int height(TreeNode root) {
+    private int height(final TreeNode root) {
         if (root == null) {
             return 0;
         }
-        return Math.max(height(root.left), height(root.right)) + 1;
+        return Math.max(this.height(root.left), this.height(root.right)) + 1;
     }
 }

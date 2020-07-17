@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class L88 {
 
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int[] is = Arrays.copyOfRange(nums1, 0, m);
+    public void merge(final int[] nums1, final int m, final int[] nums2, final int n) {
+        final int[] is = Arrays.copyOfRange(nums1, 0, m);
         int i = 0, j = 0;
         for (int k = 0; k < nums1.length; k++) {
             if (i < m && j < n) {

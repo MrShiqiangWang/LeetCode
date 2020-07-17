@@ -4,20 +4,20 @@ import utils.TreeNode;
 
 public class O55_2 {
 
-    public boolean isBalanced(TreeNode root) {
+    public boolean isBalanced(final TreeNode root) {
         if (root == null) {
             return true;
         }
-        if (Math.abs(maxDepth(root.left) - maxDepth(root.right)) > 1) {
+        if (Math.abs(this.maxDepth(root.left) - this.maxDepth(root.right)) > 1) {
             return false;
         }
-        return isBalanced(root.left) && isBalanced(root.right);
+        return this.isBalanced(root.left) && this.isBalanced(root.right);
     }
 
-    public int maxDepth(TreeNode root) {
+    public int maxDepth(final TreeNode root) {
         if (root == null) {
             return 0;
         }
-        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+        return Math.max(this.maxDepth(root.left), this.maxDepth(root.right)) + 1;
     }
 }

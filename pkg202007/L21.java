@@ -5,11 +5,11 @@ import utils.ListNode;
 
 public class L21 {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println(new L21().mergeTwoLists(ListHelper.stringToListNode("[1,2,4]"), ListHelper.stringToListNode("[1,3,4]")));
     }
 
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoLists(final ListNode l1, final ListNode l2) {
         ListNode node1 = l1;
         ListNode node2 = l2;
         ListNode newListNode = null;

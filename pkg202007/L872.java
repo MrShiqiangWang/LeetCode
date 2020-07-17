@@ -9,13 +9,13 @@ import utils.TreeNode;
 
 public class L872 {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         new L872().leafSimilar(TreeHelper.stringToTree("[1]"), TreeHelper.stringToTree("[2]"));
     }
 
-    public boolean leafSimilar(TreeNode root1, TreeNode root2) {
-        List<Integer> re1 = leafSequence(root1);
-        List<Integer> re2 = leafSequence(root2);
+    public boolean leafSimilar(final TreeNode root1, final TreeNode root2) {
+        final List<Integer> re1 = this.leafSequence(root1);
+        final List<Integer> re2 = this.leafSequence(root2);
         if (re1.size() != re2.size()) {
             return false;
         }
@@ -28,8 +28,8 @@ public class L872 {
     }
 
     private List<Integer> leafSequence(TreeNode root) {
-        Stack<TreeNode> stack = new Stack<>();
-        List<Integer> result = new ArrayList<Integer>();
+        final Stack<TreeNode> stack = new Stack<>();
+        final List<Integer> result = new ArrayList<Integer>();
         while (root != null || !stack.isEmpty()) {
             if (root != null) {
                 if (root.left == null && root.right == null) {
@@ -39,7 +39,7 @@ public class L872 {
                 root = root.left;
             }
             else {
-                TreeNode node = stack.pop();
+                final TreeNode node = stack.pop();
                 root = node.right;
             }
         }
