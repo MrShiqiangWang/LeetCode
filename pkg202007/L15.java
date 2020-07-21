@@ -33,6 +33,6 @@ public class L15 {
                 }
             }
         }
-        return new ArrayList(result);
+        return new ArrayList<List<Integer>>(result);
     }
 }

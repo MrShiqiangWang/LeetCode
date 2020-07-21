@@ -1,10 +1,8 @@
 package pkg202007;
 
-import java.util.Arrays;
-
 public class L443 {
 
-    public int compress(char[] chars) {
+    public int compress(final char[] chars) {
         int counter = 0;
         int sum = 1;
         for (int i = 1; i < chars.length; i++) {
@@ -19,7 +17,7 @@ public class L443 {
                 else {
                     chars[counter] = chars[i - 1];
                     counter++;
-                    char[] sumChars = String.valueOf(sum).toCharArray();
+                    final char[] sumChars = String.valueOf(sum).toCharArray();
                     for (int j = 0; j < sumChars.length; j++) {
                         chars[counter] = sumChars[j];
                         counter++;
@@ -36,7 +34,7 @@ public class L443 {
         else {
             chars[counter] = chars[chars.length - 1];
             counter++;
-            char[] sumChars = String.valueOf(sum).toCharArray();
+            final char[] sumChars = String.valueOf(sum).toCharArray();
             for (int j = 0; j < sumChars.length; j++) {
                 chars[counter] = sumChars[j];
                 counter++;
