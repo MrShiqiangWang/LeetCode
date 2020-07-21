@@ -4,7 +4,7 @@ import utils.ListNode;
 
 public class L160_1 {
 
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    public ListNode getIntersectionNode(final ListNode headA, final ListNode headB) {
         ListNode nodeA = headA;
         ListNode nodeB = headB;
         while (nodeA != nodeB) {

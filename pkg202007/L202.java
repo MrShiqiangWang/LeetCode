@@ -1,16 +1,13 @@
 package pkg202007;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class L202 {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println(new L202().isHappy(2));
     }
 
     public boolean isHappy(int n) {
-        int begin = n;
+        final int begin = n;
         int sum = 0;
         while (n > 0) {
             sum += (n % 10) * (n % 10);

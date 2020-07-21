@@ -1,29 +1,28 @@
 package pkg202007;
 
-import java.util.List;
-
-import history.pkg201906.DeleteNode;
 import utils.ListNode;
 
 public class L203 {
-	public ListNode removeElements(ListNode head, int val) {
-		if (head == null) {
-			return null;
-		}
-		// ±£Ö¤head²»ÊÇval
-		while (head != null && head.val == val) {
-			head = head.next;
-		}
-		// ´Óhead¿ªÊ¼ÏòÏÂÉ¾³ýÊý¾Ý
-		ListNode node = head;
-		while (node != null) {
-			if (node.next != null && node.next.val == val) {
-				node.next = node.next.next;
-			} else {
-				node = node.next;
-			}
-		}
 
-		return head;
-	}
+    public ListNode removeElements(ListNode head, final int val) {
+        if (head == null) {
+            return null;
+        }
+        // ï¿½ï¿½Ö¤headï¿½ï¿½ï¿½ï¿½val
+        while (head != null && head.val == val) {
+            head = head.next;
+        }
+        // ï¿½ï¿½headï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        ListNode node = head;
+        while (node != null) {
+            if (node.next != null && node.next.val == val) {
+                node.next = node.next.next;
+            }
+            else {
+                node = node.next;
+            }
+        }
+
+        return head;
+    }
 }

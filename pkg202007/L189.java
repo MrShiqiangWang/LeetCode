@@ -2,11 +2,11 @@ package pkg202007;
 
 public class L189 {
 
-    public void rotate(int[] nums, int k) {
+    public void rotate(final int[] nums, int k) {
         if (k > nums.length) {
             k = k % nums.length;
         }
-        int[] temp = new int[k];
+        final int[] temp = new int[k];
         for (int i = 0; i < k; i++) {
             temp[i] = nums[nums.length - k + i];
         }

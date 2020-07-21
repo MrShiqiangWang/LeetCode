@@ -4,11 +4,11 @@ import utils.TreeNode;
 
 public class M04_05 {
 
-    public boolean isValidBST(TreeNode root) {
-        return isValidBST(root, null, null);
+    public boolean isValidBST(final TreeNode root) {
+        return this.isValidBST(root, null, null);
     }
 
-    private boolean isValidBST(TreeNode root, Integer minValue, Integer maxValue) {
+    private boolean isValidBST(final TreeNode root, final Integer minValue, final Integer maxValue) {
         if (root == null) {
             return true;
         }
@@ -18,6 +18,6 @@ public class M04_05 {
         if (maxValue != null && root.val > maxValue) {
             return false;
         }
-        return isValidBST(root.left, minValue, root.val) && isValidBST(root.right, root.val, maxValue);
+        return this.isValidBST(root.left, minValue, root.val) && this.isValidBST(root.right, root.val, maxValue);
     }
 }

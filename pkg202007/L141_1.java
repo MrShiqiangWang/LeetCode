@@ -4,7 +4,7 @@ import utils.ListNode;
 
 public class L141_1 {
 
-    public boolean hasCycle(ListNode head) {
+    public boolean hasCycle(final ListNode head) {
         if (head == null) {
             return false;
         }

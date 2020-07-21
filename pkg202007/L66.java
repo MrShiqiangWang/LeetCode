@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class L66 {
 
-    public int[] plusOne(int[] digits) {
-        int[] re = new int[digits.length + 1];
+    public int[] plusOne(final int[] digits) {
+        final int[] re = new int[digits.length + 1];
         int jinwei = 1;
         for (int i = re.length - 1; i >= 1; i--) {
             if (digits[i - 1] + jinwei == 10) {

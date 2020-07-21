@@ -5,12 +5,12 @@ import java.util.Map;
 
 public class L172 {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println(new L172().trailingZeroes(5));
     }
 
-    public int trailingZeroes(int n) {
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    public int trailingZeroes(final int n) {
+        final Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int counter = 0;
         int s, m;
         for (int i = 1; i <= n; i++) {

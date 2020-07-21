@@ -8,7 +8,7 @@ import utils.ListNode;
 public class L160 {
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        Set<ListNode> set = new HashSet<>();
+        final Set<ListNode> set = new HashSet<>();
         while (headA != null) {
             set.add(headA);
             headA = headA.next;
