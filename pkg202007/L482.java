@@ -2,14 +2,14 @@ package pkg202007;
 
 public class L482 {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println(new L482().licenseKeyFormatting("--a-a-a-a--", 2));
     }
 
-    public String licenseKeyFormatting(String S, int K) {
-        char[] cs = S.toCharArray();
+    public String licenseKeyFormatting(final String S, final int K) {
+        final char[] cs = S.toCharArray();
         int tik = 0;
-        StringBuilder builder = new StringBuilder();
+        final StringBuilder builder = new StringBuilder();
         for (int i = cs.length - 1; i >= 0; i--) {
             if (cs[i] == '-') {
                 continue;

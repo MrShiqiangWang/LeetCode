@@ -2,11 +2,11 @@ package pkg202007;
 
 public class L492 {
 
-    public int[] constructRectangle(int area) {
+    public int[] constructRectangle(final int area) {
         int w = 1, l = area;
         int lastl = area;
         int lastW = 1;
-        while (w<=l) {
+        while (w <= l) {
             if (l * w < area) {
                 w++;
             }
@@ -20,7 +20,7 @@ public class L492 {
                 l--;
             }
         }
-        int[] re = { lastl, lastW };
+        final int[] re = { lastl, lastW };
         return re;
     }
 }

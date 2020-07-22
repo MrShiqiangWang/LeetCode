@@ -2,7 +2,7 @@ package pkg202007;
 
 public class L485 {
 
-    public int findMaxConsecutiveOnes(int[] nums) {
+    public int findMaxConsecutiveOnes(final int[] nums) {
         int consecutiveOnes = 0;
         int max = 0;
         for (int i = 0; i < nums.length; i++) {

@@ -4,7 +4,7 @@ import utils.TreeNode;
 
 public class L700 {
 
-    public TreeNode searchBST(TreeNode root, int val) {
+    public TreeNode searchBST(TreeNode root, final int val) {
         while (root != null) {
             if (val == root.val) {
                 return root;

@@ -5,19 +5,11 @@ import java.util.TreeSet;
 
 public class L720_1 {
 
-    public static void main(String[] args) {
-        String[] words = { "a", "banana", "app", "appl", "ap", "apply", "apple" };
-        System.out.println(new L720_1().longestWord(words));
-    }
-
     private static class Node {
 
-        boolean isEnd = false;
-        Node[] nodes = new Node[26];
-
         // 构建字典表
-        public static void buildDictionary(Node node, String word) {
-            char[] cs = word.toCharArray();
+        public static void buildDictionary(Node node, final String word) {
+            final char[] cs = word.toCharArray();
             for (int i = 0; i < cs.length; i++) {
                 if (node.nodes[cs[i] - 'a'] == null) {
                     node.nodes[cs[i] - 'a'] = new Node();
@@ -30,18 +22,27 @@ public class L720_1 {
             node.isEnd = true;
         }
 
+        boolean isEnd = false;
+
+        Node[] nodes = new Node[26];
+
     }
 
-    public String longestWord(String[] words) {
-        Node node = new Node();
+    public static void main(final String[] args) {
+        final String[] words = { "a", "banana", "app", "appl", "ap", "apply", "apple" };
+        System.out.println(new L720_1().longestWord(words));
+    }
+
+    public String longestWord(final String[] words) {
+        final Node node = new Node();
         // 构建字典树
         for (int i = 0; i < words.length; i++) {
             Node.buildDictionary(node, words[i]);
         }
-        TreeSet<String> result = new TreeSet<String>(new Comparator<String>() {
+        final TreeSet<String> result = new TreeSet<String>(new Comparator<String>() {
 
             @Override
-            public int compare(String o1, String o2) {
+            public int compare(final String o1, final String o2) {
                 if (o1.length() != o2.length()) {
                     return o2.length() - o1.length();
                 }
@@ -50,16 +51,16 @@ public class L720_1 {
                 }
             }
         });
-        StringBuilder builder = new StringBuilder();
+        final StringBuilder builder = new StringBuilder();
         for (int i = 0; i < 26; i++) {
             if (node.nodes[i] != null) {
-                longestWord(node.nodes[i], result, builder, (char) (i + 'a'));
+                this.longestWord(node.nodes[i], result, builder, (char) (i + 'a'));
             }
         }
         return result.iterator().hasNext() ? result.iterator().next() : null;
     }
 
-    private void longestWord(Node node, TreeSet<String> result, StringBuilder builder, char c) {
+    private void longestWord(final Node node, final TreeSet<String> result, final StringBuilder builder, final char c) {
         if (node.isEnd == false) {
             result.add(builder.toString());
             return;
@@ -69,7 +70,7 @@ public class L720_1 {
         for (int i = 0; i < 26; i++) {
             if (node.nodes[i] != null) {
                 hasNext = true;
-                longestWord(node.nodes[i], result, builder, (char) (i + 'a'));
+                this.longestWord(node.nodes[i], result, builder, (char) (i + 'a'));
             }
         }
         if (!hasNext) {

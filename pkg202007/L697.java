@@ -10,20 +10,20 @@ import utils.ArrayHelper;
 
 public class L697 {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println(new L697().findShortestSubArray(ArrayHelper.stringToArray("[1,2,2,3,1]")));
     }
 
-    public int findShortestSubArray(int[] nums) {
+    public int findShortestSubArray(final int[] nums) {
         // 计算数组的度，包括对应的数据的值
-        Map<Integer, Integer> map = new HashMap<>();
+        final Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
         }
         int degree = 0;
         Set<Integer> result = new HashSet<Integer>();
         // 获取度最大的数据
-        for (Entry<Integer, Integer> entry : map.entrySet()) {
+        for (final Entry<Integer, Integer> entry : map.entrySet()) {
             if (entry.getValue() > degree) {
                 degree = entry.getValue();
                 result = new HashSet<>();
@@ -39,7 +39,7 @@ public class L697 {
         int min = Integer.MAX_VALUE;
         // 获取了最大的度和相应的数据
         // 包含这些数据的左右
-        for (Integer key : result) {
+        for (final Integer key : result) {
             int left = 0, right = 0;
             for (int i = 0; i < nums.length; i++) {
                 if (nums[i] == key) {
