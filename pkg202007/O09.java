@@ -3,38 +3,36 @@ package pkg202007;
 import java.util.Stack;
 
 public class O09 {
-	class CQueue {
 
-		Stack<Integer> deleteStack;
+    class CQueue {
 
-		Stack<Integer> insertStack;
+        Stack<Integer> deleteStack;
 
-		public CQueue() {
-			deleteStack = new Stack<>();
-			insertStack = new Stack<>();
-		}
+        Stack<Integer> insertStack;
 
-		public void appendTail(int value) {
-			if (insertStack.isEmpty()) {
-				while (!deleteStack.isEmpty()) {
-					Integer va = deleteStack.pop();
-					insertStack.push(va);
-				}
-			}
-			insertStack.push(value);
-		}
+        public CQueue() {
+            this.deleteStack = new Stack<>();
+            this.insertStack = new Stack<>();
+        }
 
-		public int deleteHead() {
-			if (deleteStack.isEmpty()) {
-				while (!insertStack.isEmpty()) {
-					Integer va = insertStack.pop();
-					deleteStack.push(va);
-				}
-			}
-			if(deleteStack.isEmpty()) {
-				return -1;
-			}
-			return deleteStack.pop();
-		}
-	}
+        public void appendTail(final int value) {
+            if (this.insertStack.isEmpty()) {
+                while (!this.deleteStack.isEmpty()) {
+                    final Integer va = this.deleteStack.pop();
+                    this.insertStack.push(va);
+                }
+            }
+            this.insertStack.push(value);
+        }
+
+        public int deleteHead() {
+            if (this.deleteStack.isEmpty()) {
+                while (!this.insertStack.isEmpty()) {
+                    final Integer va = this.insertStack.pop();
+                    this.deleteStack.push(va);
+                }
+            }
+            return 0;
+        }
+    }
 }

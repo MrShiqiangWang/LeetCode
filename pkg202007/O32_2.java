@@ -14,26 +14,26 @@ public class O32_2 {
         int height;
         TreeNode treeNode;
 
-        public Node(int height, TreeNode node) {
+        public Node(final int height, final TreeNode node) {
             this.height = height;
             this.treeNode = node;
         }
     }
 
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        if(root==null){
+    public List<List<Integer>> levelOrder(final TreeNode root) {
+        if (root == null) {
             return new ArrayList<>();
         }
-        Queue<Node> queue = new LinkedList<Node>();
+        final Queue<Node> queue = new LinkedList<Node>();
         queue.add(new Node(1, root));
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        final List<List<Integer>> result = new ArrayList<List<Integer>>();
         int curHeight = -1;
         List<Integer> item = null;
         while (!queue.isEmpty()) {
-            Node node = queue.poll();
+            final Node node = queue.poll();
             if (node.height != curHeight) {
                 item = new ArrayList<>();
-                curHeight=node.height;
+                curHeight = node.height;
                 result.add(item);
             }
             item.add(node.treeNode.val);
